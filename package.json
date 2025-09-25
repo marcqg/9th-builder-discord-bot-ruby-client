@@ -1,0 +1,24 @@
+{
+  "name": "9th-builder-discord-bot-ruby-client",
+  "version": "1.0.1",
+  "buildDate": "2025-09-25",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcqg/9th-builder-discord-bot-ruby-client/"
+  },
+  "author": "Marcq Guillaume",
+  "license": "",
+  "packageManager": "yarn@1.22.22",
+  "scripts": {
+    "test": "bundle exec rspec",
+    "openapi:build:bot": "npx openapi-generator-cli generate -i ./swagger/swagger-bot.json -g ruby -o . --additional-properties=moduleName=NinthBuilderDiscordBotAPIClient,gemName=ninth_builder_discord_bot_api_client"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.23.4"
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}

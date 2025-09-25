@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['3.2']
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Ruby ${{ matrix.ruby-version }}
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    
+    - name: Set environment variables
+      run: echo "LANG=C.UTF-8" >> $GITHUB_ENV
+    
+    - name: Run tests
+      run: bundle exec rspec
+    
+    - name: Build gem
+      run: bundle exec rake build
+    
+    - name: Install gem
+      run: bundle exec rake install
+    
+#    - name: Upload gem artifacts
+#      uses: actions/upload-artifact@v4
+#      with:
+#        name: gem-ruby-${{ matrix.ruby-version }}
+#        path: pkg/*.gem
+#       if-no-files-found: error
