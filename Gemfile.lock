@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ninth_builder_discord_bot_api_client (1.0.2)
+    ninth_builder_discord_bot_api_client (1.0.3)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM

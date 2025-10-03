@@ -12,7 +12,7 @@
   "packageManager": "yarn@1.22.22",
   "scripts": {
     "test": "bundle exec rspec",
-    "openapi:build:bot": "npx openapi-generator-cli generate -i ./swagger/swagger-bot.json -g ruby -o . --additional-properties=moduleName=NinthBuilderDiscordBotAPIClient,gemName=ninth_builder_discord_bot_api_client"
+    "openapi:build:bot": "npx openapi-generator-cli generate -i ./swagger/swagger-bot.json -g ruby -o . --additional-properties=gemVersion=1.0.3,moduleName=NinthBuilderDiscordBotAPIClient,gemName=ninth_builder_discord_bot_api_client"
   },
   "dependencies": {},
   "devDependencies": {

@@ -20,9 +20,16 @@ Declare a new build with URL, message, and filename
 ```ruby
 require 'time'
 require 'ninth_builder_discord_bot_api_client'
+# setup authorization
+NinthBuilderDiscordBotAPIClient.configure do |config|
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
 
 api_instance = NinthBuilderDiscordBotAPIClient::BuildsApi.new
-build_declaration = NinthBuilderDiscordBotAPIClient::BuildDeclaration.new({url: 'https://example.com/builds/my-build.zip', message: 'New feature implementation', filename: 'my-build-v1.0.1.zip'}) # BuildDeclaration | 
+build_declaration = NinthBuilderDiscordBotAPIClient::BuildDeclaration.new({url: 'https://example.com/builds/my-build.zip', message: 'New feature implementation', filename: 'my-build-v1.0.0.zip'}) # BuildDeclaration | 
 
 begin
   # Declare a new build
@@ -63,7 +70,7 @@ end
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Discord Bot Cluster API",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "description": "API documentation for the Discord Bot Cluster management system",
     "contact": {
       "name": "Guillaume Marcq",
@@ -64,7 +64,7 @@
           "filename": {
             "type": "string",
             "description": "Name of the build file",
-            "example": "my-build-v1.0.1.zip"
+            "example": "my-build-v1.0.0.zip"
           }
         }
       },
@@ -96,7 +96,7 @@
               },
               "filename": {
                 "type": "string",
-                "example": "my-build-v1.0.1.zip"
+                "example": "my-build-v1.0.0.zip"
               },
               "createdAt": {
                 "type": "string",
@@ -229,6 +229,11 @@
         "description": "Declare a new build with URL, message, and filename",
         "tags": [
           "Builds"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
         ],
         "requestBody": {
           "required": true,

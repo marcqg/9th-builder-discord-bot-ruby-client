@@ -8,4 +8,4 @@ script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
   - gem build ninth_builder_discord_bot_api_client.gemspec
-  - gem install ./ninth_builder_discord_bot_api_client-1.0.1.gem
+  - gem install ./ninth_builder_discord_bot_api_client-1.0.3.gem
